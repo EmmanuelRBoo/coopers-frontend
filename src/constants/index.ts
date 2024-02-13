@@ -1,0 +1,1 @@
+export const API_URL = 'https://coopers-dev-hiring.onrender.com/api/v1'
