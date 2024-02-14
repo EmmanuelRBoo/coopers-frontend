@@ -191,7 +191,7 @@ export default function Home() {
 		<main>
             <section className='flex flex-col'>
                 <div className='mb-4'>
-                    <div className='flex justify-between items-center max-lg:justify-center'>
+                    <div className='flex relative justify-between items-center max-lg:justify-center px-12'>
                         <div className='text-start max-lg:text-center'>
                             <Text 
                                 weight='bold'
@@ -227,7 +227,13 @@ export default function Home() {
                         <Image
                             src={image.room}
                             alt='room image'
-                            className='w-[48rem] h-[48rem] max-lg:hidden'
+                            className='w-[32rem] h-[32rem] max-lg:hidden'
+                        />
+
+                        <Image
+                            src={image.bg_room}
+                            alt='room image background'
+                            className='absolute right-0 w-[38rem] h-[38rem] -z-10 max-lg:hidden'
                         />
                     </div>
 
@@ -251,7 +257,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className='m-4 flex flex-wrap gap-16 justify-center'>   
+                <div className='m-4 relative flex flex-wrap gap-16 justify-center'>   
                     <div className='text-center max-w-96 w-full h-fit mb-10 shadow-xl pb-2'>
                         <DragDropContext onDragEnd={onDragEnd}>
                             <div className='w-full h-6 bg-secondary'></div>
@@ -481,9 +487,15 @@ export default function Home() {
                             }
                         </DragDropContext>
                     </div>
+
+                    <Image
+                        src={image.lateral}
+                        alt='room image background'
+                        className='absolute -left-4 -top-48 max-lg:hidden'
+                    />
                 </div>
 
-                <form className='flex flex-col justify-self-center w-full m-auto items-center mt-20 max-w-2xl max-sm:px-2 shadow-lg pb-2'>
+                <form className='flex relative flex-col justify-self-center w-full m-auto items-center mt-20 max-w-2xl max-sm:px-2 shadow-lg pb-2'>
                     <div className='bg-primary w-1/3 h-5'></div>
 
                     <div className='mt-6 w-full flex items-center my-4'>
