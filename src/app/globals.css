@@ -4,6 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
 
-/* * {
-    overflow-x: hidden;
-} */
+.loading {
+    animation: loading  1s infinite linear;
+}
+
+@keyframes loading {
+    100% {
+        rotate: 360deg;
+    }
+}

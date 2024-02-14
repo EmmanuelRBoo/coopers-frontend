@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
+import { CircleNotch } from '@phosphor-icons/react'
 
 import { Text, Button } from '@/components'
 import { api } from '@/api'
@@ -13,20 +14,30 @@ export default function Login({ onClose }: { onClose: () => void }) {
     const name = useRef<HTMLInputElement>(null)
     const password = useRef<HTMLInputElement>(null)
 
+    const [loading, setLoading] = useState(false)
+
     const login = () => {
         const data = {
             password: password.current?.value,
             name: name.current?.value
         }
 
+        setLoading(true)
+
         api
             .post('/auth/login', data)
             .then(res => {
                 onClose()
+
                 cookie.set({ key: 'token', value: res.data.token })
                 localStorage.set({ key: 'user', data: { id: res.data.id, name: res.data.name } }) 
+                
+                
             })
-            .catch(err => alert(err.response.data))
+            .catch(err => {
+                alert(err.response.data)
+                setLoading(false)
+            })
 
         
     }
@@ -80,7 +91,11 @@ export default function Login({ onClose }: { onClose: () => void }) {
 
                     <div className='m-6 w-full'>
                         <Button size='full' type='primary' onClick={login} radius>
-                            <Text>Sign in</Text>
+                            {
+                                loading
+                                ? <CircleNotch size={24} className='loading mx-auto' color='white'/>
+                                : <Text>Sign in</Text>
+                            }
                         </Button>
                     </div>
                 </div>
