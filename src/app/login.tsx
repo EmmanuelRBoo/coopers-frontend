@@ -1,12 +1,13 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 
 import { Text, Button } from '@/components'
 import { api } from '@/api'
 import { localStorage, cookie } from '@/helpers'
+
 import image from '../../public'
-import Image from 'next/image'
 
 export default function Login({ onClose }: { onClose: () => void }) {
     const name = useRef<HTMLInputElement>(null)

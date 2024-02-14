@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 import { useState } from 'react'
 import { ArrowDown, ArrowUp } from '@phosphor-icons/react'
@@ -9,7 +10,7 @@ import { cookie, localStorage } from '@/helpers'
 
 import images from '../../../public'
 
-export default function Header() {
+export default function Header({ reload }: { reload: any }) {
     const [login, setLogin] = useState(false)
     const [showUserInfo, setShowUserInfo] = useState(false)
 
@@ -21,7 +22,8 @@ export default function Header() {
     const logOut = () => {
         cookie.remove('token')
         localStorage.remove('user')
-        window.location.reload()
+
+        typeof window != 'undefined' && window.location.reload()      
     }
 
     const UserInfo = () => (

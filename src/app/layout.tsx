@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 
 import { ILayout } from '@/interfaces'
-import { Header } from '@/components'
 
 import './globals.css'
 
@@ -13,7 +12,6 @@ export default function RootLayout({ children }: ILayout) {
     return (
         <html>
           	<body>
-				<Header />
             	{children}
             </body>
         </html>

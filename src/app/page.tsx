@@ -5,7 +5,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { Check, X } from '@phosphor-icons/react'
 import { v4 } from 'uuid'
 
-import { Text, Button, Card, Footer } from '@/components'
+import { Text, Button, Card, Footer, Header } from '@/components'
 import { ITasks } from '@/interfaces'
 import { cookie, localStorage } from '@/helpers'
 import { api } from '@/api'
@@ -189,6 +189,7 @@ export default function Home() {
  
     return (
 		<main>
+            <Header reload={() => {}}/>
             <section className='flex flex-col'>
                 <div className='mb-4'>
                     <div className='flex relative justify-between items-center max-lg:justify-center px-12'>
