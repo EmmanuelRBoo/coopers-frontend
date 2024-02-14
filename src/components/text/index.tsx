@@ -30,7 +30,7 @@ export default function Text({ size = 'md', children, color, font = 'primary', w
         case 'xl': return <h5 className={`${classname} text-xl`}>{children}</h5>
         case '2xl': return <h5 className={`${classname} text-2xl`}>{children}</h5>
         case '3xl': return <h4 className={`${classname} text-[2.5rem]`}>{children}</h4>
-        case '4xl': return <h3 className={`${classname} text-5xl`}>{children}</h3>
+        case '4xl': return <h3 className={`${classname} text-[3rem]`}>{children}</h3>
         case '5xl': return <h2 className={`${classname} text-[3.70rem]`}>{children}</h2>
         case '6xl': return <h1 className={`${classname} text-[5rem]`}>{children}</h1>
         default: <p className={`${classname}`}>{children}</p>

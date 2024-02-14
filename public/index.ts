@@ -9,6 +9,7 @@ import footer_detail from './footer-detail.png'
 import icon_scroll from './icon-scroll.png'
 import checkbox from './checkbox.png'
 import mail_icon from './mail-icon.png'
+import login_image from './login-image.png'
 
 const images = {
     logo,
@@ -21,7 +22,8 @@ const images = {
     footer_detail,
     icon_scroll,
     checkbox,
-    mail_icon
+    mail_icon,
+    login_image
 }
 
 export default images

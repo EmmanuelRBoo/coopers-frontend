@@ -1,6 +1,6 @@
 import { ILayout } from './layout'
 import { IText, IButton, ICard, ICheckbox } from './components'
-import { ITaks } from './task'
+import { ITasks } from './task'
 
 export type {
     ILayout,
@@ -8,5 +8,5 @@ export type {
     IButton,
     ICard,
     ICheckbox,
-    ITaks
+    ITasks
 }
